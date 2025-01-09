@@ -1,1 +1,93 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --dark-color: #333;
+  --light-color: #ff751a;
+  --medium-color: #558000;
+  --hover: #008000;
+  --bg-color: #f5e6c9;
+  --white: #e6ffe6;
+  --black: #000000;
+  --lighter-black: ;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  background-color:white;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  color: var(--black);
+  margin: 00;
+  padding: 10 20px;
+}
+
+ul {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 2;
+  overflow: hidden;
+  background-color: var(--dark-color);
+}
+
+li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+li a {
+  padding: 10px 25px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--medium-color);
+  display: block;
+  padding: 4px;
+}
+
+.active {
+  color: var(--light-color);
+}
+
+* {
+  margin: 40;
+  padding: 20;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: var(--medium-color);
+  color: var(--white);
+  padding: 20;
+  border-radius: 20;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.nav-links {
+  list-style-type: none;
+  gap: 20px;
+  float: left;
+}
+
+.navbar a {
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: var(--hover-color);
+}
+
+.footer {
+  background-color: var(--dark-color);
+  color: var(--white);
+  text-align: center;
+  padding: 20;
+  position: fixed;
+  bottom: 0;
+  width: 150%;
+  height: 90px;
+}
