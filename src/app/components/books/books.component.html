@@ -1,0 +1,22 @@
+<div class="books-container">
+  <h1>Welcome to book reviews!</h1>
+  <div *ngFor="let book of books">
+    <div class="book-card">
+      <h3>{{ book.title }}</h3>
+      <p><strong>Author:</strong> {{ book.author }}</p>
+      <p>{{ book.description }}</p>
+      <button (click)="openReviewModal(book.id)">Add a review</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isReviewModalOpen" class="modal">
+  <div class="modal-content">
+    <h4>You are writing a book review.</h4>
+    <textarea [(ngModel)]="reviewContent" placeholder="Write your review here..."></textarea>
+    <div class="button-container">
+      <button (click)="submitReview()">Post</button>
+      <button (click)="closeReviewModal()">Cancel</button>
+    </div>
+  </div>
+</div>

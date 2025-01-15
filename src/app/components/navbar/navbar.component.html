@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <ul>
+    <li><a routerLink="/news">News</a></li>
+    <li><a routerLink="/books">Books</a></li>
+    <li><a routerLink="/games">Games</a></li>
+    <li><a routerLink="/movies">Movies</a></li>
+    <li><a routerLink="/login">Login</a></li>
+    <li><a routerLink="/register">Register</a></li>
+    <li><a routerLink="/logout">Logout</a></li>
+  </ul>
+  <form (submit)="search()">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Enter title or date..." name="search" />
+    <button type="submit" class="sticker-button">
+      <img src="search-icon.png" alt="Search" class="sticker-img">
+    </button>
+  </form>
+
+  <div *ngIf="searchResults?.length">
+    <h2>Search Results:</h2>
+    <ul>
+      <li *ngFor="let review of searchResults">
+        <strong>{{ review.title }}</strong> ({{ review.date }})<br />
+        {{ review.review }}
+      </li>
+    </ul>
+  </div>
+</nav>

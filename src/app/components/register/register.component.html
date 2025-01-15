@@ -1,0 +1,22 @@
+<form (submit)="onRegister()">
+  <label for="firstname">First Name:</label>
+  <input type="text" id="firstname" [(ngModel)]="user.first_name" name="first_name" required />
+
+  <label for="lastname">Last Name:</label>
+  <input type="text" id="lastname" [(ngModel)]="user.last_name" name="last_name" required />
+
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" [(ngModel)]="user.username" autocomplete="username" required />
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" [(ngModel)]="user.email" autocomplete="email" required />
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" [(ngModel)]="user.password" required />
+
+  <label for="confirm_password">Confirm password:</label>
+  <input type="confirm_password" id="confirm_password" name="confirm_password" [(ngModel)]="user.confirm_password" required />
+
+  <button type="submit">Register!</button>
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+</form>

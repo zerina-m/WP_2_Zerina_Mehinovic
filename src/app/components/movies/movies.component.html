@@ -1,0 +1,21 @@
+<div class="books-container">
+  <h1>Welcome to movie reviews!</h1>
+  <div *ngFor="let movie of movies">
+    <div class="movie-card">
+      <h3>{{ movie.title }}</h3>
+      <p>{{ movie.description }}</p>
+      <button (click)="openReviewModal(movie.id)">Add a review</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isReviewModalOpen" class="modal">
+  <div class="modal-content">
+    <h4>You are writing a movie review.</h4>
+    <textarea [(ngModel)]="reviewContent" placeholder="Write your review here..."></textarea>
+    <div class="button-container">
+      <button (click)="submitReview()">Post</button>
+      <button (click)="closeReviewModal()">Cancel</button>
+    </div>
+  </div>
+</div>
